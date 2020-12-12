@@ -17,6 +17,6 @@ under150_DentonTX = under150.loc[(under150['State'] == 'TX') & (under150['Zip'].
 under150.to_csv('data/under150_all.csv', header=True, compression='bz2')
 under150_DentonTX.to_csv('data/under150_DentonTX.csv', header=True, compression='bz2')
 
-over150 = pd.read_csv("data/raw_data/150k plus PPP through 112420.csv")
+over150 = pd.read_csv(raw_data_zip.open("150k plus PPP through 112420.csv"))
 over150_DentonTX = over150.loc[(over150['State'] == 'TX') & (over150['Zip'].isin(denton_zips))]
 over150_DentonTX.to_csv('data/over150_DentonTX.csv', header=True, compression='bz2')
